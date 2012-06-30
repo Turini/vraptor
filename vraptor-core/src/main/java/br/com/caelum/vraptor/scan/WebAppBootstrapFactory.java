@@ -77,7 +77,7 @@ public class WebAppBootstrapFactory {
 				config.getServletContext());
 
 		logger.trace("Start classpath scanning");
-		ComponentScanner scanner = new ScannotationComponentScanner();
+		ComponentScanner scanner = new ReflectionsComponentScanner(config.getServletContext());
 		Collection<String> classNames = scanner.scan(resolver);
 		logger.trace("End classpath scanning");
 
